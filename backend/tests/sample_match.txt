@@ -1,0 +1,40 @@
+Setup
+Player1 flipped 1 coin(s), resulting in 1 heads and 0 tails, for the Beginning of Game.
+Player1 chose to go first.
+Player1 drew 7 cards for the opening hand.
+- 7 drawn cards.
+Opponent drew 7 cards for the opening hand.
+- 7 drawn cards.
+Player1 played Charmander to the Active Spot.
+Opponent played Comfey to the Active Spot.
+
+Turn # 1 - Player1's Turn
+Player1 drew a card.
+Player1 played Buddy-Buddy Poffin.
+- Player1 drew Pidgey and Charmander.
+- Player1 shuffled their deck.
+Player1 played Pidgey to the Bench.
+Player1 played Charmander to the Bench.
+
+Turn # 2 - Opponent's Turn
+Opponent drew a card.
+Opponent's Comfey used Flower Selecting from the Active Spot.
+Opponent played Colress's Experiment.
+Opponent attached Water Energy to Cramorant.
+Opponent's Cramorant used Spit Shoot and dealt 110 damage to Player1's Pidgey.
+
+Turn # 3 - Player1's Turn
+Player1 drew a card.
+Player1 played Rare Candy.
+Player1 evolved Charmander to Charizard ex in the Active Spot.
+Player1's Charizard ex used Infernal Reign.
+Player1 attached 3 Fire Energy cards.
+Player1's Charizard ex used Burning Darkness and dealt 180 damage to Opponent's Active Comfey.
+Opponent's Comfey was Knocked Out!
+Player1 took 1 Prize card.
+- 1 Prize card taken.
+Opponent played Sableye to the Active Spot.
+
+Turn # 4 - Opponent's Turn
+Opponent conceded.
+Player1 won.
