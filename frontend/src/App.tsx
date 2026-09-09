@@ -10,6 +10,8 @@ import {
   Trophy,
 } from 'lucide-react';
 
+const API_BASE_URL = "https://pocketmeta.onrender.com";
+
 const DECK_CONFIG: Record<
   string,
   {
@@ -182,7 +184,7 @@ export default function App() {
   const fetchMatches = async () => {
     if (!token) return;
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/matches?source=${section}`, {
+      const res = await axios.get(`${API_BASE_URL}/api/matches?source=${section}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMatchesList(res.data);
@@ -195,15 +197,15 @@ export default function App() {
     const deckToQuery = overrideDeck || myDeck;
     try {
       const limitlessRes = await axios.get(
-        `http://127.0.0.1:8000/api/limitless/meta?refresh=${forceRefreshMeta}`
+        `${API_BASE_URL}/api/limitless/meta?refresh=${forceRefreshMeta}`
       );
       setLimitlessData(limitlessRes.data);
 
       if (token) {
         const config = { headers: { Authorization: `Bearer ${token}` } };
         const [ptcglRes, localsRes] = await Promise.all([
-          axios.get(`http://127.0.0.1:8000/api/analytics/${encodeURIComponent(deckToQuery)}?source=ptcgl`, config),
-          axios.get(`http://127.0.0.1:8000/api/analytics/${encodeURIComponent(deckToQuery)}?source=locals`, config),
+          axios.get(`${API_BASE_URL}/api/analytics/${encodeURIComponent(deckToQuery)}?source=ptcgl`, config),
+          axios.get(`${API_BASE_URL}/api/analytics/${encodeURIComponent(deckToQuery)}?source=locals`, config),
         ]);
         setPtcglAnalytics(ptcglRes.data);
         setLocalsAnalytics(localsRes.data);
@@ -229,7 +231,7 @@ export default function App() {
     setAuthError('');
     try {
       const endpoint = authMode === 'login' ? '/api/auth/login' : '/api/auth/register';
-      const res = await axios.post(`http://127.0.0.1:8000${endpoint}`, {
+      const res = await axios.post(`${API_BASE_URL}${endpoint}`, {
         username: authUsername,
         password: authPassword,
       });
@@ -260,7 +262,7 @@ export default function App() {
   const handleDeleteMatch = async (matchId: number) => {
     if (!token) return;
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/matches/${matchId}`, {
+      await axios.delete(`${API_BASE_URL}/api/matches/${matchId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStatusMessage({ type: 'success', text: 'Match log deleted successfully.' });
@@ -279,7 +281,7 @@ export default function App() {
       setLoading(true);
       setStatusMessage(null);
       await axios.post(
-        'http://127.0.0.1:8000/api/matches/ingest-log',
+        `${API_BASE_URL}/api/matches/ingest-log`,
         {
           raw_log: rawLog,
           my_deck_name: myDeck,
@@ -314,7 +316,7 @@ export default function App() {
     try {
       setLoading(true);
       await axios.post(
-        'http://127.0.0.1:8000/api/matches/manual',
+        `${API_BASE_URL}/api/matches/manual`,
         {
           my_deck: deckRecorded,
           opp_archetype: oppDeck,
